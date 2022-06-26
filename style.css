@@ -99,11 +99,33 @@ a{
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
+  max-height: 100px;
+}
+
+.head .bottom .greeting{
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.head .bottom .profile-picture{
+  grid-row: 1/-1;
+  grid-column: 1/1;
+  height: 60px;
+}
+
+.head .bottom .greeting .hi{
+  grid-row: 1/1;
+  grid-column: 2/2;
+  font-weight: bold;
 }
 
 .head .bottom .greeting .name{
   font-size: 1.8rem;
   font-weight: bold;
+  grid-row: 2/2;
+  grid-column: 2/2;
 }
 
 .head .bottom .choices ul{
@@ -120,18 +142,35 @@ a{
   grid-template-rows: 1fr 1fr;
   gap: 18px;
   padding: 18px;
+  align-items: stretch;
+}
+
+.content .announcements{
+  grid-row: 1/1;
+  grid-column: 2/2;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .trending{
+  grid-row: 2/2;
+  grid-column: 2/2;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .cards{
+  grid-row: 1/-1;
+  grid-column: 1 / span 1;
 }
 
 /* Project Area */
-
 
 .content .section-title{
   font-weight: bold;
 }
 
 .content .cards{
-  grid-row: 1/-1;
-  grid-column: 1 / span 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 18px;
@@ -140,27 +179,29 @@ a{
 }
 
 .cards .card{
-  max-height: 300px;
+  height: 150px;
   background: white;
   display: grid;
-  grid-template-rows: 3rem 1fr 2rem;
-}.content{
-  background-color: lightgray;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 18px;
+  padding: 18px;
+  grid-template-rows: max-content max-content 1fr;
+  border-radius: 8px;
+  border-left: 8px solid orange;
+}
+.cards .card .title{
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.content .announcements{
-  grid-row: 1/1;
-  grid-column: 2/2;
+.cards .card .text{
+  font-size: 0.9rem;
+  color: gray;
 }
 
-.content .trending{
-  grid-row: 2/2;
-  grid-column: 2/2;
+.cards .card .images{
+  justify-self: right;
+  align-self: end;
 }
+
 
 /* Announcements */
 .announcements .items{
@@ -169,7 +210,10 @@ a{
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr;
   gap: 2px;
-  padding: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  flex: 1;
+
 }
 .announcement{
   padding: 8px;
@@ -197,7 +241,9 @@ a{
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr;
   gap: 16px;
-  padding: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  flex: 1;
 }
 
 .profile{
@@ -205,6 +251,7 @@ a{
   grid-template-rows: 1fr 1fr;
   grid-template-columns: auto 1fr;
   gap: 2px;
+  align-self: center;
 }
 
 .profile .profile-picture{
@@ -212,6 +259,7 @@ a{
   grid-column: 1/ span 1;
   width: 40px;
   height: 40px;
+  margin-right: 16px;
 }
 
 .profile .at{
