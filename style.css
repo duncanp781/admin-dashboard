@@ -1,6 +1,7 @@
 /* Overall styling and grid */
 :root{
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
 
 
@@ -69,6 +70,7 @@ a{
   align-items: center;
   justify-content: center;
   padding: 12px;
+  font-family: 'Prompt', 'Lato', sans-serif;
 }
 
 .side .logo img{
